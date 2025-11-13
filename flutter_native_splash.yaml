@@ -1,0 +1,29 @@
+flutter_native_splash:
+
+  background_image:      "assets/images/img_ligh.png"
+  background_image_dark: "assets/images/logo_dark.png"
+
+
+  # general branding for all platform (except android 12+):
+  # allows you to specify an image used as branding in the splash screen. should be png.
+  branding:      assets/images/brand_light.png
+  branding_dark: assets/images/branding_dark.png
+
+  branding_bottom_padding: 24          # default 0
+
+  android_12:
+    # background color
+    color: "#FFFFFF"
+    #color_dark: "#171717"
+
+    image: assets/images/img_ligh.png
+    image_dark: assets/images/logo_dark.png
+
+    # center-logo background color
+    icon_background_color: "#111111"
+    icon_background_color_dark: "#eeeeee"
+
+    # branding:
+    # The branding image dimensions must be 800x320 px.
+    branding:      assets/images/brand_light.png
+    branding_dark: assets/images/branding_dark.png
