@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/cubit/category_states.dart';
 import 'package:news_app/cubit/category_view_model.dart';
+import 'package:news_app/di/di.dart';
 import 'package:news_app/model/category.dart';
 import 'package:news_app/model/news_response.dart';
 import 'package:news_app/providers/lang_provider.dart';
@@ -18,7 +19,7 @@ class CategoryDetailsScreen extends StatefulWidget{
 }
 
 class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
-  CategoryViewModel viewModel = CategoryViewModel();
+  CategoryViewModel viewModel = CategoryViewModel(sourcesRepository: injectSourceRepository());
 
   @override
   @override
@@ -29,9 +30,6 @@ class _CategoryDetailsScreenState extends State<CategoryDetailsScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
-    var langProvider = Provider.of<LangProvider>(context);
 
     return BlocProvider(
       create: (BuildContext context) => viewModel,

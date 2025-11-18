@@ -40,7 +40,9 @@ class _SourceTapBarState extends State<SourceTapBar> {
             tabs: widget.sources.map((source){
           return TextTabBar(source: source, isSelected: (selectedIndex == widget.sources.indexOf(source)));
         }).toList()),
-        Expanded(child: NewsWidget(source: widget.sources[selectedIndex],
+        Expanded(child: NewsWidget(
+          //  key: ValueKey(widget.sources[selectedIndex].id),
+            source: widget.sources[selectedIndex],
             category: null,
             searchedText: widget.searchedText,
             myBottomSheet: (article) => widget.myBottomSheet(article)))
